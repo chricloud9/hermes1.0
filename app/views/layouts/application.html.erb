@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <title>Hermes</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if current_user != nil %>
+    This is the person who's logged in: <%= current_user.email %>
+     <%= button_to "Log out", sessions_path, method: :delete %>
+    
+  <% else %>
+    <%= button_to "Sign up", new_user_path, method: :get %>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>
+<%= session["user_id"].inspect %>
