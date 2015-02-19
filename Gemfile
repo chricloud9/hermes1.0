@@ -35,6 +35,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Form_for bootstrap
+gem 'bootstrap_form'
+
 # Add the Paperclip Gem
 gem "paperclip", "~> 4.2"
 
