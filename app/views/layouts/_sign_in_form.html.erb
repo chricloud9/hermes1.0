@@ -1,5 +1,7 @@
+<li>
 <%= bootstrap_form_for @user, :url => { :controller => "sessions", :action => "create" } do |f| %>
   	<%= f.text_field :email %>
   	<%= f.password_field :password %>
   	<%= f.submit "Sign in" %>
 <% end %>
+</li>
