@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
  
   def index
-
+    @user = User.all
   end
 
   def user_params
-   params.require(:user).permit(:email, :avatar)
+   params.require(:user).permit(:email, :password)
   end
   def new
     @user = User.new
@@ -13,7 +13,8 @@ class UsersController < ApplicationController
 
   def create
   	#add the rest of the parameters for our working app LATER
-    user = User.new(params.require(:user).permit(:first_name, :email, :password)) #which inputs will be allowed in the create controller
+    user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password)) 
+    #which inputs will be allowed in the create controller
     if user.save
       redirect_to new_sessions_path(user_created: 'true') #someone logs in here
     end
