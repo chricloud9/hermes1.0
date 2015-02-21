@@ -13,20 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150217194111) do
 
-  create_table "photos", force: :cascade do |t|
-    t.date     "photo_date"
-    t.integer  "user_id"
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
-  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
