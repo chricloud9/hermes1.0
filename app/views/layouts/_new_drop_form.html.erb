@@ -1,0 +1,7 @@
+<div id="new_drop_container">
+	<%= bootstrap_form_for(@drop) do |f| %>
+	  	<%= f.text_field :title%>
+	  	<%= f.text_field :description %>
+	  	<%= f.submit "Create Drop" %>
+	<% end %>
+</div>

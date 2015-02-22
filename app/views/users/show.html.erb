@@ -1,8 +1,9 @@
-<h1>Welcome to your use page <%= @user.email%> !</h1>
+<h1>Welcome to your user page <%= @user.email%> !</h1>
 
 <p>You are now logged in.</p>
 <p>E-mail:</p>
 
 
 <%= @user.email %>
-<%= render 'layouts/map' %>
+
+<%= link_to "Go to your drops page", new_drop_path %>

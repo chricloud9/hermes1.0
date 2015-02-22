@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :photos
+  resources :drops do
+    resources :photos
+  end
 
   root to: 'sessions#new'
 

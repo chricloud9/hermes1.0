@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  photo_date: 2015-02-17
-  user_id: 
-  title: MyString
-  description: MyText
+  drop_id: 
 
 two:
-  photo_date: 2015-02-17
-  user_id: 
-  title: MyString
-  description: MyText
+  drop_id: 

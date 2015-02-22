@@ -7,6 +7,7 @@ class CreateDrops < ActiveRecord::Migration
       t.string :landmark
       t.string :item
       t.string :spot
+      t.text :description
 
       t.timestamps null: false
     end
