@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222010614) do
+ActiveRecord::Schema.define(version: 20150222063614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,13 @@ ActiveRecord::Schema.define(version: 20150222010614) do
     t.string   "item"
     t.string   "spot"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "recipient_id"
   end
+
+  add_index "drops", ["user_id"], name: "index_drops_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.integer  "drop_id"
@@ -55,5 +59,6 @@ ActiveRecord::Schema.define(version: 20150222010614) do
     t.datetime "avatar_updated_at"
   end
 
+  add_foreign_key "drops", "users"
   add_foreign_key "photos", "drops"
 end

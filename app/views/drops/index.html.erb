@@ -1,3 +1,18 @@
 <%= link_to "Make a new drop", new_drop_path %>
+</br>
+<h1> Drops Received </h1>
+<% @drops.each do |d| %>
+	<%#= d.title %>
+	</br>
+	<%= d.description %>
+	</br>
+	<%= link_to "Add a landmark photograph", new_drop_photo_path(d) %>
+<% end %>
+<% @drops.each do |d| %>
+	<% d.photos.each do |p| %>
+		<%= image_tag p.image.url(:medium) %>
+	<% end %>
+<% end %>
+	
 
 <%= render 'layouts/map' %>

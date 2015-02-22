@@ -14,7 +14,7 @@
     #or the standard create:
     # @photo = Photo.create(photo_params)
     if @photo.save
-      redirect_to drop_photos_path(@drop)
+      redirect_to drop_path(@drop)
     else
       render 'new'
     end
