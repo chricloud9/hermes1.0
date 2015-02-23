@@ -2,20 +2,30 @@
 </br>
 <h1> Drops Received </h1>
 <% @drops.each do |d| %>
-	<%= d.title %> 
+	<%= d.title	 %> 
 	</br>
 	<%= d.description %>
 	</br>
 	<%= link_to "Add a landmark photograph", new_drop_photo_path(d) %>
 <% end %>
 
+<% @drops.each do |d| %>
+	<%= button_to "received", d, method: :delete %>
+	<br />
+<%end %>
+
 <%# @drop.photos.each do |p| %>
 	<%#= image_tag p.image.url(:medium) %>
 <%# end %>
 
-<% @drops.each do |e| %>
-	<% e.photos.each do |p| %>
+<% @drops.each do |d| %>
+	<% d.photos.each do |p| %>
 		<%= image_tag p.image.url(:medium) %>
+		<!-- Should not try to destroy photo right now, -->
+		<!-- Will focus on destroying the entire drop, and then -->
+		<!-- come back to this. -->
+		<%#= button_to "delete", p, method: :delete %>
+		<br />
 	<% end %>
 <% end %>
 	

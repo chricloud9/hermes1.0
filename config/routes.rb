@@ -6,10 +6,13 @@ Rails.application.routes.draw do
 
   root to: 'sessions#new'
 
+  delete '/drops' => 'drops#destroy', as: 'received'
+
   delete '/sessions' => 'sessions#destroy', as: 'logout'
   resource :sessions, only: [:new, :create, :destroy]
   resource :user
   resources :users, only: [:index, :new, :create, :show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
