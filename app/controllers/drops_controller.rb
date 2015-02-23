@@ -2,6 +2,8 @@ class DropsController < ApplicationController
 	def index
 		@photos = Photo.where(recipient_id: current_user.id)
 		@drops = Drop.where(recipient_id: current_user.id)
+		@currentdrops = current_user.drops
+
 	end
 
 	def new

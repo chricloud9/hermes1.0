@@ -29,5 +29,21 @@
 	<% end %>
 <% end %>
 	
+<h1> Drops Sent </h1>
+<% @currentdrops.each do |c| %>
+	Drop Title:
+	<%= c.title %>
+	</br>
+	Drop Description:
+	<%= c.description %>
+	</br>
+	<%= link_to "Add a landmark photo", new_drop_photo_path(c) %>
+<% end %>
+
+<% @currentdrops.each do |d| %>
+	<%= button_to "delete", d, method: :delete %>
+	<br />
+<%end %>
+
 
 <%= render 'layouts/map' %>

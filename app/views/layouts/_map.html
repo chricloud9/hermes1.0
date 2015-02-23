@@ -45,6 +45,17 @@
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+google.maps.event.addListener(map, 'click', function(event) {
+   placeMarker(event.latLng);
+});
+
+function placeMarker(location) {
+    var marker = new google.maps.Marker({
+        position: location, 
+        map: map
+    });
+}
+
 // 	// To add the marker to the map, use the 'map' property
 
 
