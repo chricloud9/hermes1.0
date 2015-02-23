@@ -23,7 +23,10 @@ class DropsController < ApplicationController
 	end
 
 	def destroy
-		drop = current_user.drops
-		drop.destroy
+		@drop = Drop.find(params[:id])
+		@photo = @drop.photos
+		@photo.destroy_all
+		@drop.destroy
+		redirect_to drops_path
 	end
 end
