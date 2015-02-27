@@ -21,6 +21,7 @@ class DropsController < ApplicationController
 	end
 
 	def show
+		@drops = Drop.where(recipient_id: current_user.id)
 		@drop = Drop.where(id: params[:id]).first
 	end
 

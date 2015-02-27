@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.float :latitude
-      t.float :longitude
+      t.decimal :latitude
+      t.decimal :longitude
       t.string :password_digest
 
       t.timestamps null: false

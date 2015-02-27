@@ -1,13 +1,15 @@
 <%= link_to "Make a new drop", new_drop_path %>
 </br>
 <h1> Drops Received </h1>
-<% @drops.each do |d| %>
-	<%= d.title	 %> 
-	</br>
-	<%= d.description %>
-	</br>
-	<%= link_to "Add a landmark photograph", new_drop_photo_path(d) %>
-<% end %>
+<h2>
+	<% @drops.each do |d| %>
+		<%= d.title	 %> 
+		</br>
+		<%= d.description %>
+		</br>
+		<%= link_to "Add a landmark photograph", new_drop_photo_path(d) %>
+	<% end %>
+</h2>
 
 <% @drops.each do |d| %>
 	<%= button_to "received", d, method: :delete %>
@@ -44,6 +46,17 @@
 	<%= button_to "delete", d, method: :delete %>
 	<br />
 <%end %>
+
+<%# @currentdrops.each do |d| %>
+	<%# d.photos.each do |p| %>
+		<%#= image_tag p.image.url(:medium) %>
+		<!-- Should not try to destroy photo right now, -->
+		<!-- Will focus on destroying the entire drop, and then -->
+		<!-- come back to this. -->
+		<%#= button_to "delete", p, method: :delete %>
+		<br />
+	<%# end %>
+<%# end %>
 
 
 <%= render 'layouts/map' %>
