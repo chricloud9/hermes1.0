@@ -2,7 +2,7 @@
 </br>
 <h1> Drops Received </h1>
 <h2>
-	<% @drops.each do |d| %>
+	<% current_user.drops_waiting.each do |d| %>
 		<%= d.title	 %> 
 		</br>
 		<%= d.description %>
@@ -16,9 +16,9 @@
 	<br />
 <%end %>
 
-<%# @drop.photos.each do |p| %>
-	<%#= image_tag p.image.url(:medium) %>
-<%# end %>
+<#% @drop.photos.each do |p| %>
+	<#%= image_tag p.image.url(:medium) %>
+<#% end %>
 
 <% @drops.each do |d| %>
 	<% d.photos.each do |p| %>

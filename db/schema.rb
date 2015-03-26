@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20150222063614) do
 
   create_table "drops", force: :cascade do |t|
     t.string   "title"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.string   "landmark"
     t.string   "item"
     t.string   "spot"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20150222063614) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.string   "password_digest"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
